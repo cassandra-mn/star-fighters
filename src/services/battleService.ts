@@ -18,7 +18,6 @@ export async function getBattle(firstUser: string, secondUser: string) {
         draw: true
     }
 
-    console.log(battle);
-
+    await battleRepository.insertBattle(battle);
     return battle;
 }
