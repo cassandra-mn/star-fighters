@@ -1,6 +1,7 @@
 import {Request, Response} from 'express';
+import {getFighters} from '../repositories/rankingRepository.js';
 
 export async function getRanking(req: Request, res: Response) {
-
-    res.sendStatus(501);
+    const ranking = await getFighters();
+    res.status(200).send(ranking);
 }
