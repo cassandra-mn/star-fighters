@@ -8,10 +8,7 @@ export async function postBattle(req: Request, res: Response) {
     try {
         if (!firstUser || !secondUser) return res.sendStatus(422);
 
-        const user1 = await service.getUser(firstUser);
-        const user2 = await service.getUser(secondUser);
-        console.log(user1);
-        console.log(user2);
+        await service.getBattle(firstUser, secondUser);
 
         res.sendStatus(200);
     } catch(e) {
